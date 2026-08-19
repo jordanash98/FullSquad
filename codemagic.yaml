@@ -17,6 +17,13 @@ workflows:
         script: |
           npx cap add ios
           npx cap sync ios
+      - name: Build for simulator (no signing required)
+        script: |
+          xcodebuild build \
+            -project "$XCODE_PROJECT" \
+            -scheme "$XCODE_SCHEME" \
+            -destination "generic/platform=iOS Simulator" \
+            CODE_SIGNING_ALLOWED=NO
     artifacts:
       - ios/App/build/**/*.ipa
       - ios/App/build/**/*.xcarchive
