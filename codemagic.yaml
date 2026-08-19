@@ -5,11 +5,10 @@ workflows:
     instance_type: mac_mini_m2
     environment:
       vars:
-        XCODE_WORKSPACE: "ios/App/App.xcworkspace"
+        XCODE_PROJECT: "ios/App/App.xcodeproj"
         XCODE_SCHEME: "App"
       node: latest
       xcode: latest
-      cocoapods: default
     scripts:
       - name: Install dependencies
         script: |
@@ -18,9 +17,6 @@ workflows:
         script: |
           npx cap add ios
           npx cap sync ios
-      - name: Install CocoaPods
-        script: |
-          cd ios/App && pod install
     artifacts:
       - ios/App/build/**/*.ipa
       - ios/App/build/**/*.xcarchive
