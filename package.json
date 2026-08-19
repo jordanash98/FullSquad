@@ -1,0 +1,13 @@
+{
+  "name": "full-squad",
+  "version": "1.0.0",
+  "description": "Full Squad - Premier League sticker collection app",
+  "private": true,
+  "dependencies": {
+    "@capacitor/core": "latest",
+    "@capacitor/ios": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest"
+  }
+}
